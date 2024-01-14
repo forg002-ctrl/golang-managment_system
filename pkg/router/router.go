@@ -3,7 +3,7 @@ package router
 import (
 	"github.com/gin-gonic/gin"
 
-	handlers "github.com/forg002-ctrl/managment_system/pkg/hadlers/account"
+	"github.com/forg002-ctrl/managment_system/pkg/hadlers/account"
 	"github.com/forg002-ctrl/managment_system/pkg/middleware"
 )
 

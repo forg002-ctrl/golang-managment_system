@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  golang_api:
+    build: .
+    networks:
+      - api-net
+    depends_on:
+      - postgres_database
+    environment:
+      PORT: 8200
+    ports:
+      - 8200:8200
+  postgres_database:
+    image: "postgres:12"
+    networks:
+      - api-net
+    ports:
+      - ${DB_PORT}:5432
+    environment:
+      POSTGRES_USER: ${DB_USER} 
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - vol-postgres:/data
+volumes:
+  vol-postgres:
+networks:
+  api-net:
+    external: true 

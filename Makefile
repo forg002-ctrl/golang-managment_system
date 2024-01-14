@@ -11,3 +11,9 @@ test:
 
 clean:
 	rm -f ./bin/$(BINARY_NAME)
+
+start:
+	docker-compose up -d --build
+
+stop:
+	docker-compose down
