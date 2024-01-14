@@ -10,6 +10,7 @@ services:
       PORT: 8200
     ports:
       - 8200:8200
+
   postgres_database:
     image: "postgres:12"
     networks:
